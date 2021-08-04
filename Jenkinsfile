@@ -4,12 +4,12 @@ node{
         checkout scm
     }
     stage('Build image') {
-        app = docker.build("nginx:latest")
+        app = docker.build("xavki/nginx")
     }
     stage('Run image') {
-        docker.image('nginx:latest').withRun('-p 80:80') { c ->
+        docker.image('xavki/nginx').withRun('-p 80:80') { c ->
         sh 'docker ps'
-	sh ' docker exec -ti youthful_chatterjee bash && cat /etc/nginx/conf.d/default.conf '
+	sh ' curl localhost'
     }
     }
 }
