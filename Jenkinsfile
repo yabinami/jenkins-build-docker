@@ -7,7 +7,7 @@ node{
         app = docker.build("nginx:latest")
     }
     stage('Run image') {
-        docker.image('nginx:latest').withRun('-p 8081:8081') { c ->
+        docker.image('nginx:latest').withRun('-p 80:80') { c ->
         sh 'docker ps'
 	sh 'curl localhost'
     }
