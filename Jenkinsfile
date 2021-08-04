@@ -1,6 +1,6 @@
 node{
   def app
-    stage('clone) {
+    stage('clone') {
         checkout scm
     }
     stage('Build image') {
