@@ -4,10 +4,10 @@ node{
         checkout scm
     }
     stage('Build image') {
-        app = docker.build("xavki/nginx")
+        app = docker.build("nginx:latest")
     }
     stage('Run image') {
-        docker.image('xavki/nginx').withRun('-p 80:8081') { c ->
+        docker.image('nginx:latest').withRun('-p 8081:8081') { c ->
         sh 'docker ps'
 	sh 'curl localhost'
     }
