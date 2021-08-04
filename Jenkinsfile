@@ -9,7 +9,7 @@ node{
     stage('Run image') {
         docker.image('nginx:latest').withRun('-p 80:80') { c ->
         sh 'docker ps'
-	sh ' cat /etc/nginx/conf.d/default.conf '
+	sh ' docker exec -ti youthful_chatterjee bash && cat /etc/nginx/conf.d/default.conf '
     }
     }
 }
